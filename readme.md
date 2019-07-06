@@ -1,4 +1,4 @@
-Week 6 - Notes Search
+Week 6 - Notes App
 ===================
 ### Room Database:
 
