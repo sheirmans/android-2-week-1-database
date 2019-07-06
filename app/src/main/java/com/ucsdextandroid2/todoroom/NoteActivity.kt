@@ -49,27 +49,4 @@ class NoteActivity: AppCompatActivity() {
         }
     }
 
-    private fun createNote(): Note? {
-        val title = titleView.text
-        val text = textView.text
-
-        if(title.isNotEmpty() || text.isNotEmpty()) {
-            if(originalNote != null)
-                return originalNote!!.copy(title = title.toString(), text = text.toString())
-
-            return Note(title = title.toString(), text = text.toString())
-        }
-
-        return null
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-
-        val note = createNote()
-        if(note != null) {
-            AppDatabase.get(this).notesDao().insertNote(note)
-        }
-    }
-
 }

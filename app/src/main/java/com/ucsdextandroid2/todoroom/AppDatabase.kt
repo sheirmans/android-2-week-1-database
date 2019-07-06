@@ -8,11 +8,7 @@ import androidx.room.TypeConverters
 /**
  * Created by rjaylward on 2019-07-05
  */
-@androidx.room.Database(entities = [Note::class], version = 1)
-@TypeConverters(UriTypeConverters::class)
-abstract class AppDatabase: RoomDatabase() {
-
-    abstract fun notesDao(): NotesDao
+abstract class AppDatabase {
 
     companion object {
 
@@ -24,9 +20,7 @@ abstract class AppDatabase: RoomDatabase() {
             INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
         }
 
-        private fun buildDatabase(context: Context): AppDatabase = Room.databaseBuilder(
-                context.applicationContext, AppDatabase::class.java, DB_NAME
-        ).allowMainThreadQueries().build()
+        private fun buildDatabase(context: Context): AppDatabase = TODO()
     }
 
 }

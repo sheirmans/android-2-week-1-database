@@ -10,16 +10,6 @@ import androidx.room.TypeConverter
 class UriTypeConverters {
 
     companion object {
-        @TypeConverter
-        @JvmStatic
-        fun fromUri(value: Uri?): String {
-            return value.toString()
-        }
 
-        @TypeConverter
-        @JvmStatic
-        fun toUri(value: String?): Uri? {
-            return try { Uri.parse(value) } catch(e: Exception) { null }
-        }
     }
 }
